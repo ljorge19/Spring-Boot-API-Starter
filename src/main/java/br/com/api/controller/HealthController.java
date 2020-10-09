@@ -22,20 +22,34 @@ public class HealthController {
 	public boolean retornarRequisicoes() {
 		return true;
 	}
+	
+	@GetMapping("/teste")
+	public String retornarTeste() {
+		 String dataDebito = "INDEFINIDO";
+		 
+		 
+		 if(dataDebito != "" && !dataDebito.equalsIgnoreCase(" ") && dataDebito != "INDEFINIDO" ) {
+			 return "caiu na cndição errada";
+		 }
+		 
+				 
+		
+		return "retorno Ok";
+	}
 
 	@GetMapping("/dataHora")
 	public String teste() {
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
 		String dataFormatada = dateFormat.format(date);
 		
 		//String dataFinal = dataFormatada.replaceFirst(" "," - ");
 		//dataFormatada.replaceFirst(regex, replacement)
 		
-		String dataFinal = "01/01/2020";
+		String dataFinal = dateFormat.toString();
 		XMLGregorianCalendar resultado = null;	
 		try {
-			resultado = stringToXMLGregorianCalendar(dataFinal);
+			resultado = stringToXMLGregorianCalendar(dataFormatada);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
