@@ -20,5 +20,5 @@ docker run -p 9090:8080 -t api
 Acessar o link após subir a aplicação na porta 8080
 
 ```url
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/api/swagger-ui.html#/
 ```
