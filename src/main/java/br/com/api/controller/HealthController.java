@@ -29,10 +29,6 @@ public class HealthController {
 		Date date = new Date();
 		String dataFormatada = dateFormat.format(date);
 		
-		//String dataFinal = dataFormatada.replaceFirst(" "," - ");
-		//dataFormatada.replaceFirst(regex, replacement)
-		
-		String dataFinal = dateFormat.toString();
 		XMLGregorianCalendar resultado = null;	
 		try {
 			resultado = stringToXMLGregorianCalendar("01/01/0001");
